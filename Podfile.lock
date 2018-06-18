@@ -12,12 +12,19 @@ DEPENDENCIES:
   - BigInt
   - RealmSwift
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BigInt
+    - Realm
+    - RealmSwift
+    - SipHash
+
 SPEC CHECKSUMS:
   BigInt: a7864bcecd2976bced91963baef90079dbdcca25
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
   RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
   SipHash: c6e9e43e9c531b5bc6602545130c26194a6d31ce
 
-PODFILE CHECKSUM: e55e7d985af243e61f5807da893bb2286b615bbd
+PODFILE CHECKSUM: aa139ceb446849f0020cf129bd244317acaa4308
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.2

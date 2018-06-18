@@ -1,15 +1,15 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'MerkleWallet' do
+target 'iCHC' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for MerkleWallet
+  # Pods for iCHC
   pod 'RealmSwift'
   pod 'BigInt'
 
-  target 'MerkleWalletTests' do
+  target 'iCHC_Tests' do
     inherit! :search_paths
     # Pods for testing
   end
