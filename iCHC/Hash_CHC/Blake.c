@@ -481,21 +481,21 @@ blake64_close(sph_blake_big_context *sc,
 
 
 /* see sph_blake.h */
-void
+static void
 sph_blake512_init(void *cc)
 {
     blake64_init(cc, blakeIV512, salt_zero_big);
 }
 
 /* see sph_blake.h */
-void
+static void
 sph_blake512(void *cc, const void *data, size_t len)
 {
     blake64(cc, data, len);
 }
 
 /* see sph_blake.h */
-void
+static void
 sph_blake512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 {
     blake64_close(cc, ub, n, dst, 8);
@@ -503,7 +503,7 @@ sph_blake512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 }
 
 /* see sph_blake.h */
-void
+static void
 sph_blake512_close(void *cc, void *dst)
 {
     sph_blake512_addbits_and_close(cc, 0, 0, dst);

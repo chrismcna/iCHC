@@ -17,7 +17,7 @@ public class ChaincoinTestnetNodes {
     
     
     private static var nodes: [String] {
-        return ["78.47.108.196", "108.61.179.127"]
+        return ["chaincoinexplorer.co.uk", "198.245.55.106"]
     }
     
 }

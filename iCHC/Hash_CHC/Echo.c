@@ -373,28 +373,28 @@ echo_big_close(sph_echo_big_context *sc, unsigned ub, unsigned n,
 }
 
 /* see sph_echo.h */
-void
+static void
 sph_echo512_init(void *cc)
 {
     echo_big_init(cc, 512);
 }
 
 /* see sph_echo.h */
-void
+static void
 sph_echo512(void *cc, const void *data, size_t len)
 {
     echo_big_core(cc, data, len);
 }
 
 /* see sph_echo.h */
-void
+static void
 sph_echo512_close(void *cc, void *dst)
 {
     echo_big_close(cc, 0, 0, dst, 16);
 }
 
 /* see sph_echo.h */
-void
+static void
 sph_echo512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 {
     echo_big_close(cc, ub, n, dst, 16);

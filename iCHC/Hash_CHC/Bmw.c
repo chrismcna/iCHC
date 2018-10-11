@@ -515,21 +515,21 @@ bmw64_close(sph_bmw_big_context *sc, unsigned ub, unsigned n,
 
 
 /* see sph_bmw.h */
-void
+static void
 sph_bmw512_init(void *cc)
 {
     bmw64_init(cc, bmwIV512);
 }
 
 /* see sph_bmw.h */
-void
+static void
 sph_bmw512(void *cc, const void *data, size_t len)
 {
     bmw64(cc, data, len);
 }
 
 /* see sph_bmw.h */
-void
+static void
 sph_bmw512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 {
     bmw64_close(cc, ub, n, dst, 8);
@@ -537,7 +537,7 @@ sph_bmw512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 }
 
 /* see sph_bmw.h */
-void
+static void
 sph_bmw512_close(void *cc, void *dst)
 {
     sph_bmw512_addbits_and_close(cc, 0, 0, dst);

@@ -8,9 +8,12 @@
 
 import Foundation
 
+let startingBlockHash: String = "00000000004bc0fd059489843c0175492ad78cc1804bf74f45acb11582c2c43f"
+let startingBlockHeight: Int = 1629244
 
-let startingBlockHash: String = "00000040c13caa821b7425462a64a7ae8cc7edfd0d802ddf065416c9705ef15f"
-let startingBlockHeight: Int = 10000
+
+//let startingBlockHash: String = "00000040c13caa821b7425462a64a7ae8cc7edfd0d802ddf065416c9705ef15f"
+//let startingBlockHeight: Int = 10000
 
 //let startingBlockHash: String = "00000000003d04da709df109de75aeff13ff2156f280dd5b20a05d5a7457ed69"
 //let startingBlockHeight: Int = 1242085

@@ -980,21 +980,21 @@ shavite_big_close(sph_shavite_big_context *sc,
 }
 
 /* see sph_shavite.h */
-void
+static void
 sph_shavite512_init(void *cc)
 {
     shavite_big_init(cc, SHAVITE_IV512);
 }
 
 /* see sph_shavite.h */
-void
+static void
 sph_shavite512(void *cc, const void *data, size_t len)
 {
     shavite_big_core(cc, data, len);
 }
 
 /* see sph_shavite.h */
-void
+static void
 sph_shavite512_close(void *cc, void *dst)
 {
     shavite_big_close(cc, 0, 0, dst, 16);
@@ -1002,7 +1002,7 @@ sph_shavite512_close(void *cc, void *dst)
 }
 
 /* see sph_shavite.h */
-void
+static void
 sph_shavite512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 {
     shavite_big_close(cc, ub, n, dst, 16);

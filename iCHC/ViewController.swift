@@ -12,7 +12,7 @@ import RealmSwift
 class ViewController: UIViewController, BITransactionHistoryViewDelegate, BISendTopViewDelegate, BIQRCodeReadViewControllerDelegate, BIPayViewControllerDelegate, UIScrollViewDelegate, CFControllerDelegate, BIReceiveTopViewDelegate {
 
     private var con : CFController!
-    private var key : ChaincoinTestnet!
+    private var key : CoinKey!
     
     
     var scrollView: BIScrollView!
@@ -35,10 +35,10 @@ class ViewController: UIViewController, BITransactionHistoryViewDelegate, BISend
         
         if let userKey = UserKeyInfo.loadAll().first {
             
-            key = ChaincoinTestnet(privateKeyHex: userKey.privateKey, publicKeyHex: userKey.uncompressedPublicKey)
+            key = Chaincoin(privateKeyHex: userKey.privateKey, publicKeyHex: userKey.uncompressedPublicKey)
             
         } else {
-            key = ChaincoinTestnet()
+            key = Chaincoin()
             
             let newUserKeyInfo = UserKeyInfo.create(key: key)
             newUserKeyInfo.save()
@@ -81,7 +81,7 @@ class ViewController: UIViewController, BITransactionHistoryViewDelegate, BISend
         
         let nodeAddress = ChaincoinTestnetNodes.randomNode
         
-        con = CFController(hostname: nodeAddress, port: 21994, network: NetworkMagicBytes.magicBytes())
+        con = CFController(hostname: nodeAddress, port: 11994, network: NetworkMagicBytes.magicBytes())
         con.delegate = self
         con.start()
     }
@@ -124,7 +124,7 @@ class ViewController: UIViewController, BITransactionHistoryViewDelegate, BISend
         
         let balance = TransactionDataStoreManager.calculateBalance()
         let balanceInCHC: Double = Double(balance) / 100000000
-        topStatusView.setupStatusLabel(text: String(balanceInCHC) + "tCHC")
+        topStatusView.setupStatusLabel(text: String(balanceInCHC) + "CHC")
         topStatusView.setupProgressBar()
         
         contentView.addSubview(topStatusView)
@@ -186,7 +186,7 @@ class ViewController: UIViewController, BITransactionHistoryViewDelegate, BISend
     func updateBlanceLabel() {
         let balance = TransactionDataStoreManager.calculateBalance()
         let balanceInCHC: Double = Double(balance) / 100000000
-        self.topStatusView.changeStatusLabel(text: String(balanceInCHC) + "tCHC")
+        self.topStatusView.changeStatusLabel(text: String(balanceInCHC) + "CHC")
     }
     
     func displayAlert(title: String?, message: String) {

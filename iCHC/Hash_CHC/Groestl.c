@@ -2875,28 +2875,28 @@ H[u] ^= x[u]; \
     }
     
     /* see sph_groestl.h */
-    void
+    static void
     sph_groestl512_init(void *cc)
     {
         groestl_big_init(cc, 512);
     }
     
     /* see sph_groestl.h */
-    void
+    static void
     sph_groestl512(void *cc, const void *data, size_t len)
     {
         groestl_big_core(cc, data, len);
     }
     
     /* see sph_groestl.h */
-    void
+    static void
     sph_groestl512_close(void *cc, void *dst)
     {
         groestl_big_close(cc, 0, 0, dst, 64);
     }
     
     /* see sph_groestl.h */
-    void
+    static void
     sph_groestl512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
     {
         groestl_big_close(cc, ub, n, dst, 64);

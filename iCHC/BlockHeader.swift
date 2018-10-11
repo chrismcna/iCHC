@@ -48,7 +48,7 @@ public struct BlockHeader: Equatable {
     
     public var hash: SHA256Hash {
         //let data = SHA256.digest(SHA256.digest(bitcoinData))
-        let data = Hash256.digest(bitcoinData)
+        let data = HashC11.digest(bitcoinData)
         return SHA256Hash(data.reversedData)
     }
     

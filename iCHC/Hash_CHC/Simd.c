@@ -1496,19 +1496,19 @@ finalize_big(void *cc, unsigned ub, unsigned n, void *dst, size_t dst_len)
         sph_enc32le(d + (u << 2), sc->state[u]);
 }
 
-void
+static void
 sph_simd512_init(void *cc)
 {
     init_big(cc, simdIV512);
 }
 
-void
+static void
 sph_simd512(void *cc, const void *data, size_t len)
 {
     update_big(cc, data, len);
 }
 
-void
+static void
 sph_simd512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 {
     finalize_big(cc, ub, n, dst, 16);
@@ -1516,7 +1516,7 @@ sph_simd512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 }
 
 
-void
+static void
 sph_simd512_close(void *cc, void *dst)
 {
     sph_simd512_addbits_and_close(cc, 0, 0, dst);

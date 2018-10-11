@@ -1143,7 +1143,7 @@ luffa5_close(sph_luffa512_context *sc, unsigned ub, unsigned n, void *dst)
 }
 
 /* see sph_luffa.h */
-void
+static void
 sph_luffa512_init(void *cc)
 {
     sph_luffa512_context *sc;
@@ -1154,14 +1154,14 @@ sph_luffa512_init(void *cc)
 }
 
 /* see sph_luffa.h */
-void
+static void
 sph_luffa512(void *cc, const void *data, size_t len)
 {
     luffa5(cc, data, len);
 }
 
 /* see sph_luffa.h */
-void
+static void
 sph_luffa512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 {
     luffa5_close(cc, ub, n, dst);
@@ -1169,7 +1169,7 @@ sph_luffa512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 }
 
 /* see sph_luffa.h */
-void
+static void
 sph_luffa512_close(void *cc, void *dst)
 {
     sph_luffa512_addbits_and_close(cc, 0, 0, dst);

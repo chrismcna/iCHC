@@ -1044,21 +1044,21 @@ static const sph_u64 skeinIV512[] = {
 };
 
 /* see sph_skein.h */
-void
+static void
 sph_skein512_init(void *cc)
 {
     skein_big_init(cc, skeinIV512);
 }
 
 /* see sph_skein.h */
-void
+static void
 sph_skein512(void *cc, const void *data, size_t len)
 {
     skein_big_core(cc, data, len);
 }
 
 /* see sph_skein.h */
-void
+static void
 sph_skein512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 {
     skein_big_close(cc, ub, n, dst, 64);
@@ -1066,7 +1066,7 @@ sph_skein512_addbits_and_close(void *cc, unsigned ub, unsigned n, void *dst)
 }
 
 /* see sph_skein.h */
-void
+static void
 sph_skein512_close(void *cc, void *dst)
 {
     sph_skein512_addbits_and_close(cc, 0, 0, dst);
